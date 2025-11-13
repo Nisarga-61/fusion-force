@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 46, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/USER/OneDrive/Desktop/pixelgenesis/src/app/api/verify/present/route.ts"],"sourcesContent":["import { NextRequest, NextResponse } from \"next/server\";\r\n\r\nexport async function POST(req: NextRequest) {\r\n  const body = await req.json().catch(() => ({ claims: [] }));\r\n  return NextResponse.json({ received: body?.claims || [], status: \"presented\" });\r\n}\r\n"],"names":[],"mappings":";;;;AAAA;;AAEO,eAAe,KAAK,GAAgB;IACzC,MAAM,OAAO,MAAM,IAAI,IAAI,GAAG,KAAK,CAAC,IAAM,CAAC;YAAE,QAAQ,EAAE;QAAC,CAAC;IACzD,OAAO,gJAAY,CAAC,IAAI,CAAC;QAAE,UAAU,MAAM,UAAU,EAAE;QAAE,QAAQ;IAAY;AAC/E","debugId":null}}]
+}

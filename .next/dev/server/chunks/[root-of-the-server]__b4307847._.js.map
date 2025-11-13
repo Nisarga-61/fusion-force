@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 52, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/USER/OneDrive/Desktop/pixelgenesis/src/app/api/did/create/route.ts"],"sourcesContent":["import { NextResponse } from \"next/server\";\r\nimport { randomUUID } from \"crypto\";\r\n\r\nexport async function POST() {\r\n  const id = randomUUID();\r\n  // Stub DID; later wire to on-chain DID registry\r\n  const did = `did:example:${id}`;\r\n  return NextResponse.json({ did });\r\n}\r\n"],"names":[],"mappings":";;;;AAAA;AACA;;;AAEO,eAAe;IACpB,MAAM,KAAK,IAAA,mHAAU;IACrB,gDAAgD;IAChD,MAAM,MAAM,CAAC,YAAY,EAAE,IAAI;IAC/B,OAAO,gJAAY,CAAC,IAAI,CAAC;QAAE;IAAI;AACjC","debugId":null}}]
+}

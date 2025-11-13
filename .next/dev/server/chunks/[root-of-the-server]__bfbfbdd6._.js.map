@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 52, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/USER/OneDrive/Desktop/pixelgenesis/src/app/api/verify/request/route.ts"],"sourcesContent":["import { NextResponse } from \"next/server\";\r\nimport { randomUUID } from \"crypto\";\r\n\r\nexport async function POST() {\r\n  return NextResponse.json({ requestId: randomUUID(), status: \"requested\" });\r\n}\r\n"],"names":[],"mappings":";;;;AAAA;AACA;;;AAEO,eAAe;IACpB,OAAO,gJAAY,CAAC,IAAI,CAAC;QAAE,WAAW,IAAA,mHAAU;QAAI,QAAQ;IAAY;AAC1E","debugId":null}}]
+}

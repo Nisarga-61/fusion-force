@@ -1,0 +1,3 @@
+{
+  "/api/biometric/verify/route": "app/api/biometric/verify/route.js"
+}

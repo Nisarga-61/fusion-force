@@ -1,0 +1,3 @@
+{
+  "/api/auth/zkp-challenge/route": "app/api/auth/zkp-challenge/route.js"
+}

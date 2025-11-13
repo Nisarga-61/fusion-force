@@ -1,0 +1,2 @@
+export const DIDS_ADDRESS = process.env.NEXT_PUBLIC_DIDS_ADDRESS || "";
+export const CREDENTIAL_REGISTRY_ADDRESS = process.env.NEXT_PUBLIC_CREDENTIAL_REGISTRY_ADDRESS || "";

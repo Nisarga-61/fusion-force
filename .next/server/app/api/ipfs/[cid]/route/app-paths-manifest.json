@@ -1,0 +1,3 @@
+{
+  "/api/ipfs/[cid]/route": "app/api/ipfs/[cid]/route.js"
+}

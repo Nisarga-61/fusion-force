@@ -1,64 +1,54 @@
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <div className="min-h-screen bg-zinc-50">
+      <header className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
+        <div className="text-lg font-semibold">PixelGenesis</div>
+        <nav className="flex gap-4 text-sm">
+          <Link href="/auth" className="hover:underline">Auth</Link>
+          <Link href="/dashboard" className="hover:underline">Dashboard</Link>
+          <Link href="/did/create" className="hover:underline">Create DID</Link>
+          <Link href="/credentials/issue" className="hover:underline">Issue</Link>
+          <Link href="/verify" className="hover:underline">Verify</Link>
+        </nav>
+      </header>
+      <main className="mx-auto max-w-5xl px-6 py-16">
+        <section className="grid gap-8 md:grid-cols-2">
+          <div>
+            <h1 className="text-4xl font-bold tracking-tight">Decentralized Digital Identity & Credential Vault</h1>
+            <p className="mt-4 text-zinc-600">Create a DID, issue credentials, selectively disclose claims, and verify on-chain. Optional ZKP and biometric flows included.</p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Link href="/did/create" className="rounded-md bg-black px-4 py-2 text-white">Create Identity</Link>
+              <Link href="/credentials/issue" className="rounded-md border px-4 py-2">Issue Test Credential</Link>
+              <Link href="/verify" className="rounded-md border px-4 py-2">Start Verification</Link>
+            </div>
+          </div>
+          <div className="rounded-lg border bg-white p-6 shadow-sm">
+            <h2 className="text-lg font-medium">MVP Demo Flow</h2>
+            <ol className="mt-3 list-decimal space-y-2 pl-6 text-sm text-zinc-700">
+              <li>Create Identity (DID)</li>
+              <li>Issue test credential</li>
+              <li>Store in wallet</li>
+              <li>Share with selective disclosure</li>
+              <li>Blockchain verification</li>
+            </ol>
+          </div>
+        </section>
+        <section className="mt-12 grid gap-6 md:grid-cols-3">
+          <div className="rounded-lg border p-4">
+            <div className="font-medium">Selective Disclosure</div>
+            <p className="text-sm text-zinc-600">Reveal only required fields. Example: prove age {">"} 18 without sharing birthdate.</p>
+          </div>
+          <div className="rounded-lg border p-4">
+            <div className="font-medium">ZKP Challenge-Response</div>
+            <p className="text-sm text-zinc-600">Mismatched answers that only you can prove you know.</p>
+          </div>
+          <div className="rounded-lg border p-4">
+            <div className="font-medium">Consent NFTs (Future)</div>
+            <p className="text-sm text-zinc-600">Dynamic on-chain permissions and revocation.</p>
+          </div>
+        </section>
       </main>
     </div>
   );

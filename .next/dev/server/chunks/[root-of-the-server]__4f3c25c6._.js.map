@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 52, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/USER/OneDrive/Desktop/pixelgenesis/src/app/api/credentials/issue/route.ts"],"sourcesContent":["import { NextRequest, NextResponse } from \"next/server\";\r\nimport { randomUUID } from \"crypto\";\r\n\r\nexport async function POST(req: NextRequest) {\r\n  const body = await req.json().catch(() => ({}));\r\n  const { type = \"Generic\", issuer = \"Unknown\", holder = \"did:example:holder\" } = body || {};\r\n  const credentialId = randomUUID();\r\n  const ipfsCid = \"bafybeigdyrstubcid\";\r\n  return NextResponse.json({ credentialId, type, issuer, holder, ipfsCid, status: \"issued\" });\r\n}\r\n"],"names":[],"mappings":";;;;AAAA;AACA;;;AAEO,eAAe,KAAK,GAAgB;IACzC,MAAM,OAAO,MAAM,IAAI,IAAI,GAAG,KAAK,CAAC,IAAM,CAAC,CAAC,CAAC;IAC7C,MAAM,EAAE,OAAO,SAAS,EAAE,SAAS,SAAS,EAAE,SAAS,oBAAoB,EAAE,GAAG,QAAQ,CAAC;IACzF,MAAM,eAAe,IAAA,mHAAU;IAC/B,MAAM,UAAU;IAChB,OAAO,gJAAY,CAAC,IAAI,CAAC;QAAE;QAAc;QAAM;QAAQ;QAAQ;QAAS,QAAQ;IAAS;AAC3F","debugId":null}}]
+}

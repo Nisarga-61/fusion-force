@@ -1,0 +1,18 @@
+{
+  "name": "pixelgenesis-contracts",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "hardhat compile",
+    "test": "hardhat test",
+    "deploy:mumbai": "hardhat run --network mumbai scripts/deploy.ts"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5",
+    "@openzeppelin/contracts": "^5",
+    "dotenv": "^16",
+    "hardhat": "^2.22.10",
+    "ts-node": "^10",
+    "typescript": "^5"
+  }
+}
