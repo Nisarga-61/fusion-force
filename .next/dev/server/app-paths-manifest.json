@@ -1,16 +1,7 @@
 {
-  "/api/credentials/issue/route": "app/api/credentials/issue/route.js",
-  "/api/did/create/route": "app/api/did/create/route.js",
-  "/api/verify/present/route": "app/api/verify/present/route.js",
-  "/api/verify/request/route": "app/api/verify/request/route.js",
-  "/api/verify/validate/route": "app/api/verify/validate/route.js",
+  "/api/auth/register/strict/route": "app/api/auth/register/strict/route.js",
+  "/api/auth/session/route": "app/api/auth/session/route.js",
   "/auth/page": "app/auth/page.js",
   "/biometric/page": "app/biometric/page.js",
-  "/credentials/issue/page": "app/credentials/issue/page.js",
-  "/dashboard/page": "app/dashboard/page.js",
-  "/did/create/page": "app/did/create/page.js",
-  "/page": "app/page.js",
-  "/settings/page": "app/settings/page.js",
-  "/verify/page": "app/verify/page.js",
-  "/zkp/page": "app/zkp/page.js"
+  "/page": "app/page.js"
 }

@@ -1,6 +1,7 @@
-[00:00:04.545] Server  LOG      ✓ Ready in 3.4s
-[00:05:59.568] Server  LOG      ○ Compiling / ...
-[00:06:02.475] Server  WARN     ⚠ Cross origin request detected from 192.168.127.151 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
-Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
-[00:06:02.560] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:16:05.748] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:02.835] Server  WARN     ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:03.254] Server  LOG      ✓ Ready in 2.4s
+[00:07:24.364] Server  LOG      ○ Compiling / ...
+[00:07:27.461] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:07:46.335] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:07:59.563] Server  LOG      ○ Compiling /auth ...
+[00:11:12.890] Browser ERROR   uncaughtError: ReferenceError: React is not defined

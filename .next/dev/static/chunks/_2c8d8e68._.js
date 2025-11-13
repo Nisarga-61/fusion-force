@@ -7,51 +7,138 @@ __turbopack_context__.s([
     ()=>Page
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
-"use client";
 ;
+var _s = __turbopack_context__.k.signature();
+"use client";
 function Page() {
+    _s();
+    const [userId, setUserId] = React.useState("");
+    const [features, setFeatures] = React.useState([]);
+    const [status, setStatus] = React.useState("");
+    const capture = async ()=>{
+        // Placeholder: derive a simple feature vector from random seed to simulate retinal pattern
+        const seed = Math.random();
+        const vec = Array.from({
+            length: 64
+        }, (_, i)=>Math.sin(seed * (i + 1)));
+        setFeatures(vec);
+    };
+    const enroll = async ()=>{
+        setStatus("enrolling...");
+        await capture();
+        const res = await fetch("/api/biometric/enroll", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                userId,
+                features
+            })
+        });
+        const data = await res.json();
+        setStatus(res.ok ? "Enrolled" : `Failed: ${data.error || ""}`);
+    };
+    const verify = async ()=>{
+        setStatus("verifying...");
+        await capture();
+        const res = await fetch("/api/biometric/verify", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                userId,
+                features
+            })
+        });
+        const data = await res.json();
+        setStatus(res.ok && data.ok ? `Match (${(data.score * 100).toFixed(1)}%)` : `No match (${Math.round((data.score || 0) * 100)}%)`);
+    };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "mx-auto max-w-3xl space-y-6 p-6",
+        className: "mx-auto max-w-3xl space-y-6 p-6 bg-black text-white min-h-screen",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                className: "text-2xl font-semibold",
-                children: "Biometric Authentication (Stub)"
+                className: "text-2xl font-semibold text-pink-400",
+                children: "VERIFY EVERYTHING REVEAL NOTHING"
             }, void 0, false, {
                 fileName: "[project]/src/app/biometric/page.tsx",
-                lineNumber: 6,
+                lineNumber: 33,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                className: "text-sm text-zinc-600",
-                children: "This demo uses device-native biometrics (e.g., Windows Hello, Face/Touch ID) in a future step. For now, this page is a placeholder."
-            }, void 0, false, {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "rounded-xl border border-pink-700/40 bg-zinc-950 p-5 shadow-[0_0_30px_-10px_rgba(236,72,153,0.5)]",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                        className: "block text-sm",
+                        children: [
+                            "User ID",
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                className: "mt-1 w-full rounded-md border border-pink-700 bg-black px-3 py-2 outline-none focus:ring-2 focus:ring-pink-500",
+                                value: userId,
+                                onChange: (e)=>setUserId(e.target.value),
+                                placeholder: "userId from registration"
+                            }, void 0, false, {
+                                fileName: "[project]/src/app/biometric/page.tsx",
+                                lineNumber: 36,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/src/app/biometric/page.tsx",
+                        lineNumber: 35,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "mt-3 flex gap-2",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                onClick: enroll,
+                                className: "rounded-md bg-pink-600 px-3 py-2 font-medium text-black hover:bg-pink-500",
+                                children: "Enroll"
+                            }, void 0, false, {
+                                fileName: "[project]/src/app/biometric/page.tsx",
+                                lineNumber: 39,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                onClick: verify,
+                                className: "rounded-md border border-pink-600 px-3 py-2 hover:bg-pink-950",
+                                children: "Verify"
+                            }, void 0, false, {
+                                fileName: "[project]/src/app/biometric/page.tsx",
+                                lineNumber: 40,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/src/app/biometric/page.tsx",
+                        lineNumber: 38,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "mt-3 text-sm text-pink-300",
+                        "aria-live": "polite",
+                        children: status
+                    }, void 0, false, {
+                        fileName: "[project]/src/app/biometric/page.tsx",
+                        lineNumber: 42,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
                 fileName: "[project]/src/app/biometric/page.tsx",
-                lineNumber: 7,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                className: "rounded-md border px-3 py-2",
-                children: "Enroll"
-            }, void 0, false, {
-                fileName: "[project]/src/app/biometric/page.tsx",
-                lineNumber: 10,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                className: "rounded-md bg-black px-3 py-2 text-white",
-                children: "Verify"
-            }, void 0, false, {
-                fileName: "[project]/src/app/biometric/page.tsx",
-                lineNumber: 11,
+                lineNumber: 34,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/biometric/page.tsx",
-        lineNumber: 5,
+        lineNumber: 32,
         columnNumber: 5
     }, this);
 }
+_s(Page, "p/DFkbzVyojH7T+GPOsFSn6jPCA=");
 _c = Page;
 var _c;
 __turbopack_context__.k.register(_c, "Page");

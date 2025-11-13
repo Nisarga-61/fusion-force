@@ -5,8 +5,10 @@
   "static/chunks/node_modules_ethers_lib_esm_providers_53c9dbf9._.js",
   "static/chunks/node_modules_ethers_lib_esm_650fea78._.js",
   "static/chunks/node_modules_@noble_curves_esm_0dc5ab55._.js",
-  "static/chunks/node_modules_89d8065d._.js",
-  "static/chunks/src_accbc2c5._.js"
+  "static/chunks/node_modules_zod_v4_ac66e8b8._.js",
+  "static/chunks/node_modules_zxcvbn_lib_952d6588._.js",
+  "static/chunks/node_modules_3bf00afc._.js",
+  "static/chunks/src_fdcf42ff._.js"
 ],
     source: "dynamic"
 });

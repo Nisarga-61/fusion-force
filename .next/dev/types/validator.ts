@@ -155,6 +155,24 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../../src/app/api/auth/register/strict/route.ts
+{
+  type __IsExpected<Specific extends RouteHandlerConfig<"/api/auth/register/strict">> = Specific
+  const handler = {} as typeof import("../../../src/app/api/auth/register/strict/route.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../src/app/api/auth/session/route.ts
+{
+  type __IsExpected<Specific extends RouteHandlerConfig<"/api/auth/session">> = Specific
+  const handler = {} as typeof import("../../../src/app/api/auth/session/route.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../../src/app/api/auth/zkp-challenge/route.ts
 {
   type __IsExpected<Specific extends RouteHandlerConfig<"/api/auth/zkp-challenge">> = Specific

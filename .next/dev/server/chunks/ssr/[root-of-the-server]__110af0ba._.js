@@ -435,8 +435,8 @@ __turbopack_context__.s([
     "DIDS_ADDRESS",
     ()=>DIDS_ADDRESS
 ]);
-const DIDS_ADDRESS = process.env.NEXT_PUBLIC_DIDS_ADDRESS || "";
-const CREDENTIAL_REGISTRY_ADDRESS = process.env.NEXT_PUBLIC_CREDENTIAL_REGISTRY_ADDRESS || "";
+const DIDS_ADDRESS = ("TURBOPACK compile-time value", "") || "";
+const CREDENTIAL_REGISTRY_ADDRESS = ("TURBOPACK compile-time value", "") || "";
 }),
 "[project]/src/app/verify/page.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
